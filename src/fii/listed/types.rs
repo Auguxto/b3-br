@@ -5,21 +5,21 @@ use serde_json::Value;
 #[serde(rename_all = "camelCase")]
 pub struct ListedFundsResponse {
     pub page: Page,
-    pub results: Vec<Fund>,
+    pub results: Vec<Fii>,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Page {
-    pub page_number: i64,
-    pub page_size: i64,
-    pub total_records: i64,
-    pub total_pages: i64,
+    pub page_number: i32,
+    pub page_size: i32,
+    pub total_records: i32,
+    pub total_pages: i32,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct Fund {
+pub struct Fii {
     pub segment: String,
     pub acronym: String,
     pub fund_name: String,
